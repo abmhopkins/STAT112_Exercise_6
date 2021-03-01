@@ -1,0 +1,12 @@
+name: Covid-19-Trends
+title: Covid-19-Trends
+username:
+account: alexhopkins
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3713292
+bundleId: 4283906
+url: https://alexhopkins.shinyapps.io/Covid-19-Trends/
+when: 1614572214.96745
+asMultiple: FALSE
+asStatic: FALSE
