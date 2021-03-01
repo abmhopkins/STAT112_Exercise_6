@@ -38,10 +38,10 @@ server <- function(input, output) {
             mutate(days_since_20 = date - min(date)) %>% 
             ggplot(aes(x = days_since_20, y = cases, linetype = state, color = state)) +
             geom_line(size = 1.2) +
-            scale_y_log10() +
+            scale_y_log10(labels = scales::comma) +
             scale_x_continuous() +
             labs(x = "Days since 20 cases",
-                 y = "Cases (Log 10)",
+                 y = "Total Cases (Log 10)",
                  linetype = "",
                  color = "")
     )

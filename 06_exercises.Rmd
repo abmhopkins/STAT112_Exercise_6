@@ -12,7 +12,7 @@ output:
 
 
 ```{r setup, include=FALSE}
-#knitr::opts_chunk$set(echo = TRUE, error=TRUE, message=FALSE, warning=FALSE)
+knitr::opts_chunk$set(echo = TRUE, error=TRUE, message=FALSE, warning=FALSE)
 ```
 
 ```{r libraries}
@@ -37,6 +37,7 @@ library(patchwork)     # for nicely combining ggplot2 graphs
 library(gt)            # for creating nice tables
 library(rvest)         # for scraping data
 library(robotstxt)     # for checking if you can scrape data
+library(readxl)
 theme_set(theme_minimal())
 ```
 
@@ -73,32 +74,183 @@ Once your repository is created, you should always open your **project** rather 
 
   1. This app will also use the COVID data. Make sure you load that data and all the libraries you need in the `app.R` file you create. Below, you will post a link to the app that you publish on shinyapps.io. You will create an app to compare states' cumulative number of COVID cases over time. The x-axis will be number of days since 20+ cases and the y-axis will be cumulative cases on the log scale (`scale_y_log10()`). We use number of days since 20+ cases on the x-axis so we can make better comparisons of the curve trajectories. You will have an input box where the user can choose which states to compare (`selectInput()`) and have a submit button to click once the user has chosen all states they're interested in comparing. The graph should display a different line for each state, with labels either on the graph or in a legend. Color can be used if needed. 
   
+  "https://alexhopkins.shinyapps.io/Covid-19-Trends/"
+  
 ## Warm-up exercises from tutorial
 
   2. Read in the fake garden harvest data. Find the data [here](https://github.com/llendway/scraping_etc/blob/main/2020_harvest.csv) and click on the `Raw` button to get a direct link to the data. 
   
 ```{r}
-fake_garden_harvest <- read_csv("https://raw.githubusercontent.com/llendway/scraping_etc/main/2020_harvest.csv")
+fake_garden_harvest <- read_csv("https://raw.githubusercontent.com/llendway/scraping_etc/main/2020_harvest.csv", 
+    col_types = cols(weight = col_number()), 
+    na = "MISSING", skip = 2) %>% 
+  select(-X1)
 ```
   
   
   3. Read in this [data](https://www.kaggle.com/heeraldedhia/groceries-dataset) from the kaggle website. You will need to download the data first. Save it to your project/repo folder. Do some quick checks of the data to assure it has been read in appropriately.
+  
+```{r}
+groceries <- read_csv("Groceries_dataset.csv")
+
+groceries %>% 
+  mutate(across(where(is.character), as.factor)) %>% 
+  summary()
+```
 
   4. CHALLENGE(not graded): Write code to replicate the table shown below (open the .html file to see it) created from the `garden_harvest` data as best as you can. When you get to coloring the cells, I used the following line of code for the `colors` argument:
   
-```{r, eval=FALSE}
-colors = scales::col_numeric(
+```{r}
+jul_colors = scales::col_numeric(
       palette = paletteer::paletteer_d(
-        palette = "RColorBrewer::YlGn"
-      ) %>% as.character()
+        palette = "RColorBrewer::YlGn") %>% 
+  as.character(),
+  domain = c(0.1, 13))
+
+aug_colors = scales::col_numeric(
+      palette = paletteer::paletteer_d(
+        palette = "RColorBrewer::YlGn") %>% 
+  as.character(),
+  domain = c(0.1, 32))
+
+sep_colors = scales::col_numeric(
+      palette = paletteer::paletteer_d(
+        palette = "RColorBrewer::YlGn") %>% 
+  as.character(),
+  domain = c(0.1, 28))
+
+oct_colors = scales::col_numeric(
+      palette = paletteer::paletteer_d(
+        palette = "RColorBrewer::YlGn") %>% 
+  as.character(),
+  domain = c(0.1, 12))
 ```
 
-<!-- ![](garden_table.html){width=600, height=1000} -->
-
+```{r}
+garden_harvest %>% 
+  mutate(month = month(date, label = TRUE)) %>% 
+  filter(vegetable %in% c("beans", "carrots", "tomatoes")) %>% 
+  group_by(vegetable, variety, month) %>% 
+  summarise(weight_lbs = sum(weight)*0.00220462) %>% 
+  pivot_wider(id_cols = vegetable:weight_lbs,
+              names_from = "month",
+              values_from = "weight_lbs") %>% 
+  replace_na(list(Jul = 0, Aug = 0, Sep = 0, Oct = 0)) %>% 
+  gt(rowname_col = "variety",
+    groupname_col = "vegetable") %>% 
+  tab_header(
+    title = "Bean, Carrot, and Tomato Harvest (lb)") %>%
+  fmt_number(columns = c("Jul", "Aug", "Sep", "Oct"),
+             decimals = 2) %>%
+  summary_rows(
+    groups = TRUE,
+    columns = c("Jul", "Aug", "Sep", "Oct"),
+    fns = list(sum = "sum"),
+    formatter = fmt_number,
+    decimals = 1) %>% 
+  data_color(columns = vars(Jul),
+             colors = jul_colors) %>% 
+  data_color(columns = vars(Aug),
+             colors = aug_colors) %>% 
+  data_color(columns = vars(Sep),
+             colors = sep_colors) %>% 
+  data_color(columns = vars(Oct),
+             colors = oct_colors)
+```
 
   5. Create a table using `gt` with data from your project or from the `garden_harvest` data if your project data aren't ready.
   
+  This isn't my project data but just another dataset I wanted to try.
+```{r}
+library(fplscrapR)
+fpl_player_info <- get_player_info()
+PL_Team_Colors <- read_excel("PL_Team_Colors.xlsx")
+```
+  
+```{r}
+fpl_player_info %>% 
+  left_join(get_fdr(),
+            by = c("team" = "id")) %>% 
+  select(playername, short_name, now_cost, total_points, element_type) %>% 
+  mutate(position = ifelse(element_type == 1, "GK", ifelse(element_type == 2, "DEF", ifelse(element_type == 3, "MID",ifelse(element_type == 4, "FWD", "N/A")))),
+         now_cost = now_cost/10,
+         points_per_mil = total_points/now_cost) %>% 
+  select(playername, position, now_cost, total_points,points_per_mil) %>% 
+  filter(points_per_mil > 15) %>% 
+  arrange(-points_per_mil) %>% 
+  head(n = 15) %>% 
+  gt() %>% 
+  tab_header(title = "Goalkeepers and Defenders Provide the Most Bang for your Buck",
+             subtitle = "Which fantasy premier league players provide the most value for their cost?") %>%
+  fmt_currency(vars(now_cost),
+               currency = "GBP",
+               decimals = 1) %>% 
+  fmt_number(vars(points_per_mil),
+             decimals = 2) %>% 
+  cols_label(
+    position = md("**Position**"),
+    now_cost = md("**Cost**"),
+    total_points = md("**Points**"),
+    points_per_mil = md("**Points/£**"),
+    playername = md("")) %>% 
+  tab_footnote(
+    footnote = "In million of pounds",
+    locations = cells_column_labels(
+      columns = vars(now_cost))) %>% 
+  data_color(columns = vars(points_per_mil),
+             colors = scales::col_numeric(
+      palette = paletteer::paletteer_d(
+        palette = "RColorBrewer::PRGn"
+        ) %>% as.character(),
+      domain = NULL))
+```
+  
+  
   6. Use `patchwork` operators and functions to combine at least two graphs using your project data or `garden_harvest` data if your project data aren't read.
   
+```{r}
+g1 <- fpl_player_info %>% 
+  select(id, team, now_cost) %>% 
+  mutate(now_cost=now_cost/10) %>% 
+  group_by(team) %>%
+  summarize(mean=mean(now_cost)) %>%
+  mutate(teamshort = get_fdr()$short_name,
+         team = get_fdr()$name) %>% 
+  ggplot(aes(x=mean,y = fct_reorder(teamshort, mean), fill = team, color = team)) +
+  geom_col() +
+  scale_fill_manual(values = PL_Team_Colors$Primary) +
+  scale_color_manual(values = PL_Team_Colors$Secondary) +
+  theme(legend.position = "none",
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank(),
+        plot.title.position = "plot") +
+  labs(x="",y="",
+      title="Mean FPL player cost (Million £)")
+
+g2 <- fpl_player_info %>% 
+  select(id, team, total_points, now_cost) %>% 
+  mutate(now_cost=now_cost/10) %>% 
+  group_by(team) %>%
+  summarize(total_team_points=sum(total_points),
+            total_team_cost = sum(now_cost),
+            points_per = total_team_points/total_team_cost) %>%
+  mutate(teamshort = get_fdr()$short_name,
+         team = get_fdr()$name) %>% 
+  ggplot(aes(x=total_team_points, y = fct_reorder(teamshort, total_team_points), fill = team, color = team)) +
+  geom_col() +
+  scale_fill_manual(values = PL_Team_Colors$Primary) +
+  scale_color_manual(values = PL_Team_Colors$Secondary) +
+  theme(legend.position = "none",
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank(),
+        plot.title.position = "plot") +
+  labs(x="",y="",
+      title="Points/Millon for Premier League Teams")
+  
+
+g2 + g1 
+```
+
+[My GitHub Link]("https://github.com/abmhopkins/STAT112_Exercise_6/blob/main/06_exercises.md")
 
 **DID YOU REMEMBER TO UNCOMMENT THE OPTIONS AT THE TOP?**
