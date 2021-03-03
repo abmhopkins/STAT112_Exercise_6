@@ -222,8 +222,7 @@ g1 <- fpl_player_info %>%
   scale_color_manual(values = PL_Team_Colors$Secondary) +
   theme(legend.position = "none",
         panel.grid.major.y = element_blank(),
-        panel.grid.minor.y = element_blank(),
-        plot.title.position = "plot") +
+        panel.grid.minor.y = element_blank()) +
   labs(x="",y="",
       title="Mean FPL player cost (Million £)")
 
@@ -236,7 +235,7 @@ g2 <- fpl_player_info %>%
             points_per = total_team_points/total_team_cost) %>%
   mutate(teamshort = get_fdr()$short_name,
          team = get_fdr()$name) %>% 
-  ggplot(aes(x=total_team_points, y = fct_reorder(teamshort, total_team_points), fill = team, color = team)) +
+  ggplot(aes(x=points_per, y = fct_reorder(teamshort, points_per), fill = team, color = team)) +
   geom_col() +
   scale_fill_manual(values = PL_Team_Colors$Primary) +
   scale_color_manual(values = PL_Team_Colors$Secondary) +
@@ -245,7 +244,7 @@ g2 <- fpl_player_info %>%
         panel.grid.minor.y = element_blank(),
         plot.title.position = "plot") +
   labs(x="",y="",
-      title="Points/Millon for Premier League Teams")
+      title="Points/Million for Premier League Teams")
   
 
 g2 + g1 
