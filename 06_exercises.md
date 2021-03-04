@@ -73,7 +73,7 @@ Once your repository is created, you should always open your **project** rather 
 
   1. This app will also use the COVID data. Make sure you load that data and all the libraries you need in the `app.R` file you create. Below, you will post a link to the app that you publish on shinyapps.io. You will create an app to compare states' cumulative number of COVID cases over time. The x-axis will be number of days since 20+ cases and the y-axis will be cumulative cases on the log scale (`scale_y_log10()`). We use number of days since 20+ cases on the x-axis so we can make better comparisons of the curve trajectories. You will have an input box where the user can choose which states to compare (`selectInput()`) and have a submit button to click once the user has chosen all states they're interested in comparing. The graph should display a different line for each state, with labels either on the graph or in a legend. Color can be used if needed. 
   
-  [Covid-19 Trends]("https://alexhopkins.shinyapps.io/Covid-19-Trends/")
+  [Covid-19 Trends](https://alexhopkins.shinyapps.io/Covid-19-Trends/)
   
 ## Warm-up exercises from tutorial
 
@@ -177,7 +177,7 @@ garden_harvest %>%
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#kdwyzcfhsm .gt_table {
+#ctsrjuameb .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -202,7 +202,7 @@ garden_harvest %>%
   border-left-color: #D3D3D3;
 }
 
-#kdwyzcfhsm .gt_heading {
+#ctsrjuameb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -214,7 +214,7 @@ garden_harvest %>%
   border-right-color: #D3D3D3;
 }
 
-#kdwyzcfhsm .gt_title {
+#ctsrjuameb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -224,7 +224,7 @@ garden_harvest %>%
   border-bottom-width: 0;
 }
 
-#kdwyzcfhsm .gt_subtitle {
+#ctsrjuameb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -234,13 +234,13 @@ garden_harvest %>%
   border-top-width: 0;
 }
 
-#kdwyzcfhsm .gt_bottom_border {
+#ctsrjuameb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#kdwyzcfhsm .gt_col_headings {
+#ctsrjuameb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -255,7 +255,7 @@ garden_harvest %>%
   border-right-color: #D3D3D3;
 }
 
-#kdwyzcfhsm .gt_col_heading {
+#ctsrjuameb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -275,7 +275,7 @@ garden_harvest %>%
   overflow-x: hidden;
 }
 
-#kdwyzcfhsm .gt_column_spanner_outer {
+#ctsrjuameb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -287,15 +287,15 @@ garden_harvest %>%
   padding-right: 4px;
 }
 
-#kdwyzcfhsm .gt_column_spanner_outer:first-child {
+#ctsrjuameb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#kdwyzcfhsm .gt_column_spanner_outer:last-child {
+#ctsrjuameb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#kdwyzcfhsm .gt_column_spanner {
+#ctsrjuameb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -307,7 +307,7 @@ garden_harvest %>%
   width: 100%;
 }
 
-#kdwyzcfhsm .gt_group_heading {
+#ctsrjuameb .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -329,7 +329,7 @@ garden_harvest %>%
   vertical-align: middle;
 }
 
-#kdwyzcfhsm .gt_empty_group_heading {
+#ctsrjuameb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -344,15 +344,15 @@ garden_harvest %>%
   vertical-align: middle;
 }
 
-#kdwyzcfhsm .gt_from_md > :first-child {
+#ctsrjuameb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#kdwyzcfhsm .gt_from_md > :last-child {
+#ctsrjuameb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#kdwyzcfhsm .gt_row {
+#ctsrjuameb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -371,7 +371,7 @@ garden_harvest %>%
   overflow-x: hidden;
 }
 
-#kdwyzcfhsm .gt_stub {
+#ctsrjuameb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -383,7 +383,7 @@ garden_harvest %>%
   padding-left: 12px;
 }
 
-#kdwyzcfhsm .gt_summary_row {
+#ctsrjuameb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -393,7 +393,7 @@ garden_harvest %>%
   padding-right: 5px;
 }
 
-#kdwyzcfhsm .gt_first_summary_row {
+#ctsrjuameb .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -403,7 +403,7 @@ garden_harvest %>%
   border-top-color: #D3D3D3;
 }
 
-#kdwyzcfhsm .gt_grand_summary_row {
+#ctsrjuameb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -413,7 +413,7 @@ garden_harvest %>%
   padding-right: 5px;
 }
 
-#kdwyzcfhsm .gt_first_grand_summary_row {
+#ctsrjuameb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -423,11 +423,11 @@ garden_harvest %>%
   border-top-color: #D3D3D3;
 }
 
-#kdwyzcfhsm .gt_striped {
+#ctsrjuameb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#kdwyzcfhsm .gt_table_body {
+#ctsrjuameb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -436,7 +436,7 @@ garden_harvest %>%
   border-bottom-color: #D3D3D3;
 }
 
-#kdwyzcfhsm .gt_footnotes {
+#ctsrjuameb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -450,13 +450,13 @@ garden_harvest %>%
   border-right-color: #D3D3D3;
 }
 
-#kdwyzcfhsm .gt_footnote {
+#ctsrjuameb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#kdwyzcfhsm .gt_sourcenotes {
+#ctsrjuameb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -470,46 +470,46 @@ garden_harvest %>%
   border-right-color: #D3D3D3;
 }
 
-#kdwyzcfhsm .gt_sourcenote {
+#ctsrjuameb .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#kdwyzcfhsm .gt_left {
+#ctsrjuameb .gt_left {
   text-align: left;
 }
 
-#kdwyzcfhsm .gt_center {
+#ctsrjuameb .gt_center {
   text-align: center;
 }
 
-#kdwyzcfhsm .gt_right {
+#ctsrjuameb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#kdwyzcfhsm .gt_font_normal {
+#ctsrjuameb .gt_font_normal {
   font-weight: normal;
 }
 
-#kdwyzcfhsm .gt_font_bold {
+#ctsrjuameb .gt_font_bold {
   font-weight: bold;
 }
 
-#kdwyzcfhsm .gt_font_italic {
+#ctsrjuameb .gt_font_italic {
   font-style: italic;
 }
 
-#kdwyzcfhsm .gt_super {
+#ctsrjuameb .gt_super {
   font-size: 65%;
 }
 
-#kdwyzcfhsm .gt_footnote_marks {
+#ctsrjuameb .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="kdwyzcfhsm" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="ctsrjuameb" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   <thead class="gt_header">
     <tr>
       <th colspan="5" class="gt_heading gt_title gt_font_normal" style>Bean, Carrot, and Tomato Harvest (lb)</th>
@@ -751,7 +751,7 @@ fpl_player_info %>%
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#jqzuvyrtny .gt_table {
+#reuzvicmhg .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -776,7 +776,7 @@ fpl_player_info %>%
   border-left-color: #D3D3D3;
 }
 
-#jqzuvyrtny .gt_heading {
+#reuzvicmhg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -788,7 +788,7 @@ fpl_player_info %>%
   border-right-color: #D3D3D3;
 }
 
-#jqzuvyrtny .gt_title {
+#reuzvicmhg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -798,7 +798,7 @@ fpl_player_info %>%
   border-bottom-width: 0;
 }
 
-#jqzuvyrtny .gt_subtitle {
+#reuzvicmhg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -808,13 +808,13 @@ fpl_player_info %>%
   border-top-width: 0;
 }
 
-#jqzuvyrtny .gt_bottom_border {
+#reuzvicmhg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jqzuvyrtny .gt_col_headings {
+#reuzvicmhg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -829,7 +829,7 @@ fpl_player_info %>%
   border-right-color: #D3D3D3;
 }
 
-#jqzuvyrtny .gt_col_heading {
+#reuzvicmhg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -849,7 +849,7 @@ fpl_player_info %>%
   overflow-x: hidden;
 }
 
-#jqzuvyrtny .gt_column_spanner_outer {
+#reuzvicmhg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -861,15 +861,15 @@ fpl_player_info %>%
   padding-right: 4px;
 }
 
-#jqzuvyrtny .gt_column_spanner_outer:first-child {
+#reuzvicmhg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jqzuvyrtny .gt_column_spanner_outer:last-child {
+#reuzvicmhg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jqzuvyrtny .gt_column_spanner {
+#reuzvicmhg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -881,7 +881,7 @@ fpl_player_info %>%
   width: 100%;
 }
 
-#jqzuvyrtny .gt_group_heading {
+#reuzvicmhg .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -903,7 +903,7 @@ fpl_player_info %>%
   vertical-align: middle;
 }
 
-#jqzuvyrtny .gt_empty_group_heading {
+#reuzvicmhg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -918,15 +918,15 @@ fpl_player_info %>%
   vertical-align: middle;
 }
 
-#jqzuvyrtny .gt_from_md > :first-child {
+#reuzvicmhg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jqzuvyrtny .gt_from_md > :last-child {
+#reuzvicmhg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jqzuvyrtny .gt_row {
+#reuzvicmhg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -945,7 +945,7 @@ fpl_player_info %>%
   overflow-x: hidden;
 }
 
-#jqzuvyrtny .gt_stub {
+#reuzvicmhg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -957,7 +957,7 @@ fpl_player_info %>%
   padding-left: 12px;
 }
 
-#jqzuvyrtny .gt_summary_row {
+#reuzvicmhg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -967,7 +967,7 @@ fpl_player_info %>%
   padding-right: 5px;
 }
 
-#jqzuvyrtny .gt_first_summary_row {
+#reuzvicmhg .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -977,7 +977,7 @@ fpl_player_info %>%
   border-top-color: #D3D3D3;
 }
 
-#jqzuvyrtny .gt_grand_summary_row {
+#reuzvicmhg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -987,7 +987,7 @@ fpl_player_info %>%
   padding-right: 5px;
 }
 
-#jqzuvyrtny .gt_first_grand_summary_row {
+#reuzvicmhg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -997,11 +997,11 @@ fpl_player_info %>%
   border-top-color: #D3D3D3;
 }
 
-#jqzuvyrtny .gt_striped {
+#reuzvicmhg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jqzuvyrtny .gt_table_body {
+#reuzvicmhg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1010,7 +1010,7 @@ fpl_player_info %>%
   border-bottom-color: #D3D3D3;
 }
 
-#jqzuvyrtny .gt_footnotes {
+#reuzvicmhg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1024,13 +1024,13 @@ fpl_player_info %>%
   border-right-color: #D3D3D3;
 }
 
-#jqzuvyrtny .gt_footnote {
+#reuzvicmhg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#jqzuvyrtny .gt_sourcenotes {
+#reuzvicmhg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1044,46 +1044,46 @@ fpl_player_info %>%
   border-right-color: #D3D3D3;
 }
 
-#jqzuvyrtny .gt_sourcenote {
+#reuzvicmhg .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#jqzuvyrtny .gt_left {
+#reuzvicmhg .gt_left {
   text-align: left;
 }
 
-#jqzuvyrtny .gt_center {
+#reuzvicmhg .gt_center {
   text-align: center;
 }
 
-#jqzuvyrtny .gt_right {
+#reuzvicmhg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jqzuvyrtny .gt_font_normal {
+#reuzvicmhg .gt_font_normal {
   font-weight: normal;
 }
 
-#jqzuvyrtny .gt_font_bold {
+#reuzvicmhg .gt_font_bold {
   font-weight: bold;
 }
 
-#jqzuvyrtny .gt_font_italic {
+#reuzvicmhg .gt_font_italic {
   font-style: italic;
 }
 
-#jqzuvyrtny .gt_super {
+#reuzvicmhg .gt_super {
   font-size: 65%;
 }
 
-#jqzuvyrtny .gt_footnote_marks {
+#reuzvicmhg .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="jqzuvyrtny" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="reuzvicmhg" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   <thead class="gt_header">
     <tr>
       <th colspan="5" class="gt_heading gt_title gt_font_normal" style>Goalkeepers and Defenders Provide the Most Bang for your Buck</th>
@@ -1106,106 +1106,106 @@ fpl_player_info %>%
       <td class="gt_row gt_left">Emiliano Martínez</td>
       <td class="gt_row gt_left">GK</td>
       <td class="gt_row gt_right">&#163;5.3</td>
-      <td class="gt_row gt_center">140</td>
-      <td class="gt_row gt_right" style="background-color: #00441B; color: #FFFFFF;">26.42</td>
+      <td class="gt_row gt_center">142</td>
+      <td class="gt_row gt_right" style="background-color: #00441B; color: #FFFFFF;">26.79</td>
     </tr>
     <tr>
       <td class="gt_row gt_left">Stuart Dallas</td>
       <td class="gt_row gt_left">DEF</td>
       <td class="gt_row gt_right">&#163;5.0</td>
       <td class="gt_row gt_center">113</td>
-      <td class="gt_row gt_right" style="background-color: #EFE5EF; color: #000000;">22.60</td>
+      <td class="gt_row gt_right" style="background-color: #E7D4E8; color: #000000;">22.60</td>
     </tr>
     <tr>
       <td class="gt_row gt_left">Illan Meslier</td>
       <td class="gt_row gt_left">GK</td>
       <td class="gt_row gt_right">&#163;4.6</td>
       <td class="gt_row gt_center">102</td>
-      <td class="gt_row gt_right" style="background-color: #E2CDE4; color: #000000;">22.17</td>
+      <td class="gt_row gt_right" style="background-color: #D1B7D9; color: #000000;">22.17</td>
     </tr>
     <tr>
       <td class="gt_row gt_left">Nick Pope</td>
       <td class="gt_row gt_left">GK</td>
       <td class="gt_row gt_right">&#163;5.6</td>
-      <td class="gt_row gt_center">121</td>
-      <td class="gt_row gt_right" style="background-color: #C3A7D0; color: #000000;">21.61</td>
+      <td class="gt_row gt_center">124</td>
+      <td class="gt_row gt_right" style="background-color: #CFB5D8; color: #000000;">22.14</td>
     </tr>
     <tr>
       <td class="gt_row gt_left">Alphonse Areola</td>
       <td class="gt_row gt_left">GK</td>
       <td class="gt_row gt_right">&#163;4.5</td>
-      <td class="gt_row gt_center">97</td>
-      <td class="gt_row gt_right" style="background-color: #C1A3CE; color: #000000;">21.56</td>
+      <td class="gt_row gt_center">99</td>
+      <td class="gt_row gt_right" style="background-color: #C7ACD3; color: #000000;">22.00</td>
     </tr>
     <tr>
       <td class="gt_row gt_left">Ilkay Gündogan</td>
       <td class="gt_row gt_left">MID</td>
       <td class="gt_row gt_right">&#163;6.2</td>
       <td class="gt_row gt_center">132</td>
-      <td class="gt_row gt_right" style="background-color: #B18EC0; color: #000000;">21.29</td>
+      <td class="gt_row gt_right" style="background-color: #9E77B0; color: #000000;">21.29</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">Matt Targett</td>
+      <td class="gt_row gt_left">DEF</td>
+      <td class="gt_row gt_right">&#163;5.0</td>
+      <td class="gt_row gt_center">106</td>
+      <td class="gt_row gt_right" style="background-color: #9970AB; color: #000000;">21.20</td>
     </tr>
     <tr>
       <td class="gt_row gt_left">Tomas Soucek</td>
       <td class="gt_row gt_left">MID</td>
       <td class="gt_row gt_right">&#163;5.3</td>
       <td class="gt_row gt_center">112</td>
-      <td class="gt_row gt_right" style="background-color: #A782B8; color: #000000;">21.13</td>
+      <td class="gt_row gt_right" style="background-color: #966AA7; color: #000000;">21.13</td>
     </tr>
     <tr>
       <td class="gt_row gt_left">Patrick Bamford</td>
       <td class="gt_row gt_left">FWD</td>
       <td class="gt_row gt_right">&#163;6.8</td>
       <td class="gt_row gt_center">142</td>
-      <td class="gt_row gt_right" style="background-color: #996FAB; color: #000000;">20.88</td>
+      <td class="gt_row gt_right" style="background-color: #8A5299; color: #FFFFFF;">20.88</td>
     </tr>
     <tr>
       <td class="gt_row gt_left">Aaron Cresswell</td>
       <td class="gt_row gt_left">DEF</td>
       <td class="gt_row gt_right">&#163;5.8</td>
       <td class="gt_row gt_center">121</td>
-      <td class="gt_row gt_right" style="background-color: #986DA9; color: #000000;">20.86</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">Matt Targett</td>
-      <td class="gt_row gt_left">DEF</td>
-      <td class="gt_row gt_right">&#163;5.0</td>
-      <td class="gt_row gt_center">104</td>
-      <td class="gt_row gt_right" style="background-color: #9567A6; color: #000000;">20.80</td>
+      <td class="gt_row gt_right" style="background-color: #895098; color: #FFFFFF;">20.86</td>
     </tr>
     <tr>
       <td class="gt_row gt_left">James Justin</td>
       <td class="gt_row gt_left">DEF</td>
       <td class="gt_row gt_right">&#163;4.9</td>
       <td class="gt_row gt_center">101</td>
-      <td class="gt_row gt_right" style="background-color: #8B559B; color: #FFFFFF;">20.61</td>
+      <td class="gt_row gt_right" style="background-color: #7C3689; color: #FFFFFF;">20.61</td>
     </tr>
     <tr>
       <td class="gt_row gt_left">John Stones</td>
       <td class="gt_row gt_left">DEF</td>
       <td class="gt_row gt_right">&#163;5.2</td>
       <td class="gt_row gt_center">107</td>
-      <td class="gt_row gt_right" style="background-color: #8A5299; color: #FFFFFF;">20.58</td>
+      <td class="gt_row gt_right" style="background-color: #7A3387; color: #FFFFFF;">20.58</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">Vicente Guaita</td>
+      <td class="gt_row gt_left">GK</td>
+      <td class="gt_row gt_right">&#163;4.8</td>
+      <td class="gt_row gt_center">97</td>
+      <td class="gt_row gt_right" style="background-color: #5F196B; color: #FFFFFF;">20.21</td>
     </tr>
     <tr>
       <td class="gt_row gt_left">Pedro Lomba Neto</td>
       <td class="gt_row gt_left">MID</td>
       <td class="gt_row gt_right">&#163;5.7</td>
       <td class="gt_row gt_center">113</td>
-      <td class="gt_row gt_right" style="background-color: #581364; color: #FFFFFF;">19.82</td>
+      <td class="gt_row gt_right" style="background-color: #42014D; color: #FFFFFF;">19.82</td>
     </tr>
     <tr>
       <td class="gt_row gt_left">Lukasz Fabianski</td>
       <td class="gt_row gt_left">GK</td>
       <td class="gt_row gt_right">&#163;5.0</td>
       <td class="gt_row gt_center">99</td>
-      <td class="gt_row gt_right" style="background-color: #561262; color: #FFFFFF;">19.80</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">Ederson Santana de Moraes</td>
-      <td class="gt_row gt_left">GK</td>
-      <td class="gt_row gt_right">&#163;6.1</td>
-      <td class="gt_row gt_center">119</td>
-      <td class="gt_row gt_right" style="background-color: #40004B; color: #FFFFFF;">19.51</td>
+      <td class="gt_row gt_right" style="background-color: #40004B; color: #FFFFFF;">19.80</td>
     </tr>
   </tbody>
   
